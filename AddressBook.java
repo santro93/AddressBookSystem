@@ -38,6 +38,71 @@ public class AddressBook {
 			System.out.println("Email Id : " +contact.email);
 			System.out.println("Phone number : " +contact.phone);
 			System.out.println("Zipcode : "+contact.zip);
-		}
+		}	
+	}
+	
+	public void editContact() {
+        Scanner editScan = new Scanner(System.in);
+        int number;
+        do {
+            System.out.println("Enter a number you want to edit\n" +
+                    "1.First Name\n" +
+                    "2.LastName\n" +
+                    "3.Address\n" +
+                    "4.City\n" +
+                    "5.State\n" +
+                    "6.Zip\n" +
+                    "7.Phone\n" +
+                    "8.Email\n" +
+                    "9.Exit Edit function");
+            number = editScan.nextInt();
+            editScan.nextLine();
+            for (Contacts contact : tempList) {
+                switch (number) {
+                    case 1:
+                        System.out.println("Enter the correct First name");
+                        String firstName = editScan.next();
+                        contact.setFirstName(firstName);
+                        break;
+                    case 2:
+                        System.out.println("Enter the correct Last name");
+                        String lastName = editScan.next();
+                        contact.setLastName(lastName);
+                        break;
+                    case 3:
+                        System.out.println("Enter the correct Address");
+                        String address = editScan.next();
+                        contact.setAddress(address);
+                        break;
+                    case 4:
+                        System.out.println("Enter the correct City");
+                        String city = editScan.next();
+                        contact.setCity(city);
+                        break;
+                    case 5:
+                        System.out.println("Enter the correct State");
+                        String state = editScan.next();
+                        contact.setState(state);
+                        break;
+                    case 6:
+                        System.out.println("Enter the correct Zip");
+                        String zip = editScan.next();
+                        contact.setZip(zip);
+                        break;
+                    case 7:
+                        System.out.println("Enter the correct Phone");
+                        String phone = editScan.next();
+                        contact.setPhone(phone);
+                        break;
+                    case 8:
+                        System.out.println("Enter the correct Email");
+                        String email = editScan.next();
+                        contact.setEmail(email);
+                        break;
+                    default:
+                        System.out.println("Please input a valid number (1-8)");
+                }
+            }
+        }while (number != 9);
 	}
 }

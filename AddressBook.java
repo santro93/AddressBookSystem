@@ -105,4 +105,12 @@ public class AddressBook {
             }
         }while (number != 9);
 	}
+	
+	public void deleteContact(){
+		Scanner delScan = new Scanner(System.in);
+		System.out.println("Enter the First Name of the contact to delete");
+		String firstName = delScan.next();
+		tempList.removeIf(contact -> firstName.equals(contact.getFirstName()));
+		System.out.println("Contact Deleted");
+	}
 }
